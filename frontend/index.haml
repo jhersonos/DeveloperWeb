@@ -1,3 +1,4 @@
+-gallery_image = ["papas.jpg","panini.jpg","hamburger.jpg","club-sandwich.jpg","hot-cakes.jpg"]
 !!!5
 %html{class:"no-js", lang:"es"}
     %head
@@ -5,6 +6,7 @@
         %title El blog oscuro
         %meta{name:"description",content:"Comunidad anime para postear o recomendar animes"}
         %meta{name:"viewport",content:"width=device-width,initial-scale=1"}
+        %meta{:"data-name" => "image-counter",content:"#{gallery_image.size - 1}"}
         %link{href:"https://fonts.googleapis.com/css?family=Dancing+Script",rel:"stylesheet"}
         %link{rel:"stylesheet",href:"css/normalize.css"}
         %link{rel:"stylesheet",href:"css/bootstrap.css"}
@@ -62,8 +64,11 @@
                             .col-xs-12
                                 %h3.dancing-script.white-text.subtitle= photo[:name]
                                 %p.no-margin.white-text= "S/." + photo[:princing]
-
+        #gallery
+            .inner
+                -gallery_image.each do |image|
+                    .image{style:"background-image:url(/codigofacilito/frontend/images/food/#{image});"}
         %script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=",crossorigin:"anonymous"}
-        %script
+        :javascript
             window.jQuery || console.log("<script src='/codigofacilito/frontend/js/jquery-1.12.0.min.js'><\/script>")
         %script{src:"/codigofacilito/frontend/js/main-min.js"}

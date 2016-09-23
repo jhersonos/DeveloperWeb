@@ -227,6 +227,24 @@ textarea {
     .large-padding{
         padding: 5px 10px;
     }
+    #gallery{
+        width: 100%;
+        overflow-x:hidden; 
+        .inner{
+            white-space:nowrap;
+            position:relative;
+            left: 0%;
+            transition: left 0.8s;
+        }
+        .image{
+            display: inline-block;
+            height: 100vh;
+            width: 100%;
+            margin-right: -4px;
+            background-size:cover;
+            background-position:center;
+        }
+    }
 /*
  * Hide visually and from screen readers
  */
