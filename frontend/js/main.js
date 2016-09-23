@@ -3,7 +3,16 @@
 	let sticky	=	false
 	let currentPosition = 0
 	const imageCounter= parseInt($("[data-name='image-counter']").attr("content"))
-	console.log(imageCounter)
+	const correo = "jherson.o.s@hotmail.com"
+
+	$("#contacto").on("submit",function(ev){
+		ev.preventDefault()
+
+		sendForm($(this))
+
+		return false
+	})
+
 	setInterval(()=>{
 		if (currentPosition<imageCounter){
 			currentPosition++
@@ -35,6 +44,17 @@
 		$("#description").removeClass("fixed").addClass("absolute")
 		$("#navigation").slideDown()
 		$("#sticky-navigation").slideUp("hidden")
+	}
+	function sendForm($form){
+		$.ajax({
+		    url: $form.attr("action"), 
+		    method: "POST",
+		    data: $form.formObject(),
+		    dataType: "json",
+		    success:function(){
+		    	alert("Todo salio bien")
+		    }
+		})
 	}
 
 	function isInBottom(){

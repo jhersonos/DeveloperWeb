@@ -68,7 +68,37 @@
             .inner
                 -gallery_image.each do |image|
                     .image{style:"background-image:url(/codigofacilito/frontend/images/food/#{image});"}
+        .container
+            .card.white.black-text.text-center.relative
+                %h3.medium.slim
+                    En
+                    %strong.dancing-script.medium Restaurante Facilito
+                    cocinar no es una profesíon, no es una tecnica es un
+                    %strong.dancing-script.medium arte
+                %p.top-space El arte de desarrollar, consiste en hacer, plasmar la idea que uno tiene hacia los demas, puede ser de ayuda para muchos, tambien blogs, paginas oficiales etc.
+                %strong.dancing-script.medium Developer Web - JhersonO's
+
+        .top-space.black.white-text.full-height#contact
+            .row.middle-xs.full-height
+                .col-xs-12
+                    .box
+                        %form{action:"https://formspree.io/jherson.o.s@hotmail.com",method:"POST",id:"contacto"}
+                            .row.center-xs
+                                .col-xs-2.col-md-1
+                                    .box
+                                .col-xs-5
+                                    .box
+                                        %input{type:"email",name:"email",placeholder:"Coloca tu correo electronico"}
+                                        %input{type:"text",name:"name",placeholder:"Coloca tu nombre"}
+                                        %textarea{name:"body",placeholder:"Escribe aquí tu mensaje..."}
+                                        %div
+                                            %button{type:"submit",class:"btn btn-success"}
+                                                Enviar
+
+
+
         %script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=",crossorigin:"anonymous"}
         :javascript
             window.jQuery || console.log("<script src='/codigofacilito/frontend/js/jquery-1.12.0.min.js'><\/script>")
+        %script{src:"/codigofacilito/frontend/js/form_objects-min.js"}
         %script{src:"/codigofacilito/frontend/js/main-min.js"}
