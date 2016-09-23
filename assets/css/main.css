@@ -3,6 +3,6 @@ html,body{
 	width: 100%;
 }
 body{
-	background-image:url('/assets/img/wallper.jpg');
+	background-image:url('DeveloperWeb/assets/img/wallper.jpg');
 	background-repeat: no-repeat;
 }
