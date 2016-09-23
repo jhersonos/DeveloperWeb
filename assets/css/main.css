@@ -10,3 +10,12 @@ body{
     margin: 0;
     overflow: hidden;
 }
+.white-text{
+	color: white;
+}
+a{
+	text-decoration: none;
+}
+.medium{
+	font-size: 2em;
+}
