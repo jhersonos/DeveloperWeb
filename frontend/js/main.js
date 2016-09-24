@@ -62,4 +62,27 @@
 		const descriptionHeight=$description.height()
 		return $(window).scrollTop() > $(window).height()-descriptionHeight
 	}
+	/*Otro archivo js*/
+	const selector = "#contacto"
+	$(".step:nth-child(1)").addClass("active")
+
+
+	$(selector).find(".input").on("change",(ev)=>{
+		let $input = $(ev.target)
+
+		let $next_input = $input.next()
+
+		enfocar_nuevo_paso($next_input)
+	})
+		//Helpers
+	function validation_form(){
+
+	}
+	function is_valide(){
+
+	}
+	function enfocar_nuevo_paso($next_input){
+		$next_input.focus()
+	}
+
 })()

@@ -203,16 +203,22 @@
       <div class='row middle-xs full-height'>
         <div class='col-xs-12'>
           <div class='box'>
-            <form action='https://formspree.io/jherson.o.s@hotmail.com' id='contacto' method='POST'>
+            <form action='https://formspree.io/jherson.o.s@hotmail.com' class='step-form' id='contacto' method='POST'>
               <div class='row center-xs'>
                 <div class='col-xs-2 col-md-1'>
                   <div class='box'></div>
                 </div>
                 <div class='col-xs-5'>
                   <div class='box'>
-                    <input name='email' placeholder='Coloca tu correo electronico' type='email'>
-                    <input name='name' placeholder='Coloca tu nombre' type='text'>
-                    <textarea name='body' placeholder='Escribe aquí tu mensaje...'></textarea>
+                    <fieldset class='step'>
+                      <input class='input' name='email' placeholder='Coloca tu correo electronico' type='email'>
+                    </fieldset>
+                    <fieldset class='step'>
+                      <input class='input' name='name' placeholder='Coloca tu nombre' type='text'>
+                    </fieldset>
+                    <fieldset class='step'>
+                      <textarea class='input' name='body' placeholder='Escribe aquí tu mensaje...'></textarea>
+                    </fieldset>
                     <div>
                       <button class='btn btn-success' type='submit'>
                         Enviar

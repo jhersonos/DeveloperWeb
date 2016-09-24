@@ -123,16 +123,6 @@ textarea {
   margin-top: -200px;
 }
 
-input, textarea {
-  font-size: 2em;
-  padding: 0.5em;
-  border: none;
-  outline: none;
-  border-bottom: solid 1px #eee;
-  background-color: transparent;
-  width: 100%;
-}
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -304,6 +294,28 @@ input, textarea {
   margin-right: -4px;
   background-size: cover;
   background-position: center;
+}
+
+.step-form .step {
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.4;
+  padding: 1em 0.5em;
+  margin: 0px;
+}
+
+.step-form .step.active {
+  max-height: 150px;
+}
+
+.step-form .step input, .step-form .step textarea {
+  font-size: 2em;
+  padding: 0.5em;
+  border: none;
+  outline: none;
+  border-bottom: solid 1px #eee;
+  background-color: transparent;
+  width: 100%;
 }
 
 /*
