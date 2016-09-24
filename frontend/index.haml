@@ -24,13 +24,13 @@
                 actualiza tu navegador para una mejor experiencia 
         ="<![endif]-->"
         .video-container
-            %video{autoplay:true,loop:true,poster:"/codigofacilito/frontend/videos/IMAGES/bbq.jpg"}
-                %source{src:"/codigofacilito/frontend/videos/MP4/bbq.mp4"}
-                %source{src:"/codigofacilito/frontend/videos/WEBM/bbq.webm"}
+            %video{autoplay:true,loop:true,poster:"videos/IMAGES/bbq.jpg"}
+                %source{src:"videos/MP4/bbq.mp4"}
+                %source{src:"videos/WEBM/bbq.webm"}
         .row.full-height.middle-xs.center-xs.relative.up#home
             .col-xs-12
                 .box.white-text
-                    %img{src:"/codigofacilito/frontend/images/logo.png",width:"200"}
+                    %img{src:"images/logo.png",width:"200"}
                     %h1.dancing-script.title.no-margin Restaurante Facilito
                     %p#is-open
                         %i.glyphicon.glyphicon-time
@@ -58,7 +58,7 @@
             -menu_photos = [{name:"Combo",image:"combo",princing:"15.00"},{name:"Club Sandwich",image:"club-sandwich",princing:"10.00"},{name:"Hamburger",image:"hamburger",princing:"13.00"},{name:"Hot-cakes",image:"hot-cakes",princing:"8.00"},{name:"Panini",image:"panini",princing:"12.50"},{name:"Papas",image:"papas",princing:"7.00"},{name:"Club Sandwich",image:"club-sandwich",princing:"10.00"},{name:"Hamburger",image:"hamburger",princing:"10.00"}]
             .row
             -menu_photos.each do |photo|
-                .col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(/codigofacilito/frontend/images/food/#{photo[:image]}-thumb.jpg)"}
+                .col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(images/food/#{photo[:image]}-thumb.jpg)"}
                     .screen
                         .row.middle-xs.full-height
                             .col-xs-12
@@ -67,7 +67,7 @@
         #gallery
             .inner
                 -gallery_image.each do |image|
-                    .image{style:"background-image:url(/codigofacilito/frontend/images/food/#{image});"}
+                    .image{style:"background-image:url(images/food/#{image});"}
         .container
             .card.white.black-text.text-center.relative
                 %h3.medium.slim
@@ -99,6 +99,6 @@
 
         %script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=",crossorigin:"anonymous"}
         :javascript
-            window.jQuery || console.log("<script src='/codigofacilito/frontend/js/jquery-1.12.0.min.js'><\/script>")
-        %script{src:"/codigofacilito/frontend/js/form_objects-min.js"}
-        %script{src:"/codigofacilito/frontend/js/main-min.js"}
+            window.jQuery || console.log("<script src='js/jquery-1.12.0.min.js'><\/script>")
+        %script{src:"js/form_objects-min.js"}
+        %script{src:"js/main-min.js"}
