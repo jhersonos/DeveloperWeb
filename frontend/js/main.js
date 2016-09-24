@@ -70,9 +70,9 @@
 	$(selector).find(".input").on("change",(ev)=>{
 		let $input = $(ev.target)
 
-		let $next_input = $input.next()
+		let $next_step = $input.parent().next()
 
-		enfocar_nuevo_paso($next_input)
+		enfocar_nuevo_paso($next_step)
 	})
 		//Helpers
 	function validation_form(){
@@ -81,7 +81,8 @@
 	function is_valide(){
 
 	}
-	function enfocar_nuevo_paso($next_input){
+	function enfocar_nuevo_paso($next_step){
+		$next_step.addClass("active")
 		$next_input.focus()
 	}
 
