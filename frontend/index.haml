@@ -85,15 +85,21 @@
                         %form{action:"https://formspree.io/jherson.o.s@hotmail.com",method:"POST",id:"contacto",class:"step-form"}
                             .row.center-xs
                                 .col-xs-2.col-md-1
-                                    .box
+                                    .box.text-center
+                                        -3.times do |i|
+                                            -if i == 0  
+                                                .path-step.active
+                                            -else
+                                                .path-step
+                                            %br
                                 .col-xs-5
                                     .box
                                         %fieldset.step.active
-                                            %input{type:"email",name:"email",placeholder:"Coloca tu correo electronico",class:"input"}
+                                            %input{type:"email",name:"email",placeholder:"Coloca tu correo electronico",class:"input",required:"true"}
                                         %fieldset.step
-                                            %input{type:"text",name:"name",placeholder:"Coloca tu nombre",class:"input"}
+                                            %input{type:"text",name:"name",placeholder:"Coloca tu nombre",class:"input",required:"true"}
                                         %fieldset.step
-                                            %textarea{name:"body",placeholder:"Escribe aquí tu mensaje...",class:"input"}
+                                            %textarea{name:"body",placeholder:"Escribe aquí tu mensaje...",class:"input",required:"true"}
                                         %div
                                             %button{type:"submit",class:"btn btn-success"}
                                                 Enviar

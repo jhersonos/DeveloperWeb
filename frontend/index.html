@@ -206,18 +206,25 @@
             <form action='https://formspree.io/jherson.o.s@hotmail.com' class='step-form' id='contacto' method='POST'>
               <div class='row center-xs'>
                 <div class='col-xs-2 col-md-1'>
-                  <div class='box'></div>
+                  <div class='box text-center'>
+                    <div class='path-step active'></div>
+                    <br>
+                    <div class='path-step'></div>
+                    <br>
+                    <div class='path-step'></div>
+                    <br>
+                  </div>
                 </div>
                 <div class='col-xs-5'>
                   <div class='box'>
                     <fieldset class='step active'>
-                      <input class='input' name='email' placeholder='Coloca tu correo electronico' type='email'>
+                      <input class='input' name='email' placeholder='Coloca tu correo electronico' required='true' type='email'>
                     </fieldset>
                     <fieldset class='step'>
-                      <input class='input' name='name' placeholder='Coloca tu nombre' type='text'>
+                      <input class='input' name='name' placeholder='Coloca tu nombre' required='true' type='text'>
                     </fieldset>
                     <fieldset class='step'>
-                      <textarea class='input' name='body' placeholder='Escribe aquí tu mensaje...'></textarea>
+                      <textarea class='input' name='body' placeholder='Escribe aquí tu mensaje...' required='true'></textarea>
                     </fieldset>
                     <div>
                       <button class='btn btn-success' type='submit'>

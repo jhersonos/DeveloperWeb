@@ -62,28 +62,57 @@
 		const descriptionHeight=$description.height()
 		return $(window).scrollTop() > $(window).height()-descriptionHeight
 	}
-	/*Otro archivo js*/
+
+/*************************************************************************************************************
+*																											 *
+*	Otro archivo js													 										 *
+*                          																					 *
+*************************************************************************************************************/	
+	
 	const selector = "#contacto"
-	$(".step:nth-child(1)").addClass("active")
+	//$(".step:nth-child(1)").addClass("active")
 
-
+//function for swicht of input
 	$(selector).find(".input").on("change",(ev)=>{
 		let $input = $(ev.target)
 
-		let $next_step = $input.parent().next()
+		let $next_step = $input.parent().next(".step")
+		//console.log($next_step)
 
-		enfocar_nuevo_paso($next_step)
+		if ($next_step.length > 0) {
+			enfocar_nuevo_paso($next_step)
+		}else{
+			console.log("holas")
+			validation_form()
+		}
 	})
 		//Helpers
 	function validation_form(){
-
+		if (is_valide()) {
+			console.log("es valido!")
+		}{
+			let $field_invalido = $(selector).find(".input:invalid").first().parent()
+			enfocar_nuevo_paso($field_invalido)
+		}
 	}
 	function is_valide(){
-
+		return document.querySelector(selector).checkValidity()
 	}
 	function enfocar_nuevo_paso($next_step){
+
+		$('.step.active').removeClass('active')
 		$next_step.addClass("active")
-		$next_input.focus()
+		$next_step.focus()
 	}
+/*************************************************************************************************************
+*																											 *
+*	Otro archivo js													 										 *
+*                          																					 *
+*************************************************************************************************************/
+//Function for points the form
+$('.path-step').on("click",(ev)=>{
+	$(".path-step.active").removeClass("active")
+	$(ev.target).addClass("active")
+})
 
 })()
