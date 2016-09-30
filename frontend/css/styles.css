@@ -317,12 +317,12 @@ textarea {
   max-height: 0px;
   overflow: hidden;
   transition: all 0.4s;
-  padding: 1em 0.5em;
   margin: 0px;
 }
 
 .step-form .step.active {
   max-height: 150px;
+  padding: 1em 0.5em;
 }
 
 .step-form .step input, .step-form .step textarea {

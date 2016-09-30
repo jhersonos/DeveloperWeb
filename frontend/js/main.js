@@ -45,7 +45,8 @@
 		$("#navigation").slideDown()
 		$("#sticky-navigation").slideUp("hidden")
 	}
-	function sendForm($form){
+	function sendForm(){
+		$form = $(selector)
 		$.ajax({
 		    url: $form.attr("action"), 
 		    method: "POST",
@@ -72,24 +73,25 @@
 	const selector = "#contacto"
 	//$(".step:nth-child(1)").addClass("active")
 
-//function for swicht of input
+	//function for swicht of input
 	$(selector).find(".input").on("change",(ev)=>{
-		let $input = $(ev.target)
+		const $input = $(ev.target)
 
-		let $next_step = $input.parent().next(".step")
-		//console.log($next_step)
+		const $next_step = $input.parent().next(".step")
 
-		if ($next_step.length > 0) {
+		const is_form_valid = is_valide()
+		if (!is_form_valid && $next_step.length > 0) {
 			enfocar_nuevo_paso($next_step)
 		}else{
-			console.log("holas")
 			validation_form()
 		}
+		//console.log($next_step)
+
 	})
 		//Helpers
 	function validation_form(){
 		if (is_valide()) {
-			console.log("es valido!")
+			sendForm()
 		}{
 			let $field_invalido = $(selector).find(".input:invalid").first().parent()
 			enfocar_nuevo_paso($field_invalido)
@@ -99,10 +101,18 @@
 		return document.querySelector(selector).checkValidity()
 	}
 	function enfocar_nuevo_paso($next_step){
-
 		$('.step.active').removeClass('active')
 		$next_step.addClass("active")
 		$next_step.focus()
+		// coordinar circle con los pasos
+		const posicion = ($next_step.index(".step") * 2) + 1
+		$(".path-step.active").removeClass("active")
+		const $circle = $(".path-step:nth-child("+posicion+")")
+		focus_circle($circle)
+	}
+	function focus_circle($circle){
+		$(".path-step.active").removeClass("active")
+		$circle.addClass("active")
 	}
 /*************************************************************************************************************
 *																											 *
@@ -111,8 +121,15 @@
 *************************************************************************************************************/
 //Function for points the form
 $('.path-step').on("click",(ev)=>{
-	$(".path-step.active").removeClass("active")
-	$(ev.target).addClass("active")
+	const $current_circle = $(ev.target)
+
+	focus_circle($current_circle)
+
+	const posicion = $current_circle.index(".path-step") + 1
+	let $test=$(".step:nth-child("+posicion+")")
+	//mostrar el index de current circle
+	//console.log($current_circle.index(".path-step"))
+	enfocar_nuevo_paso($test)
 })
 
 })()

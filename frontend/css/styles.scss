@@ -286,10 +286,10 @@ textarea {
         max-height: 0px;
         overflow: hidden;
         transition: all 0.4s;
-        padding: 1em 0.5em;
         margin:0px;
         &.active{
             max-height: 150px;
+            padding: 1em 0.5em;
         }
         input,textarea{
             font-size:2em;
