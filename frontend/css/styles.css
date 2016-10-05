@@ -335,6 +335,10 @@ textarea {
   width: 100%;
 }
 
+#map {
+  height: 500px;
+}
+
 /*
  * Hide visually and from screen readers
  */

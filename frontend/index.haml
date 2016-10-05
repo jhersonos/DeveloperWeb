@@ -82,6 +82,7 @@
             .row.middle-xs.full-height
                 .col-xs-12
                     .box
+                        %p.text-center.medium#info-contact Presiona enter para llenar el campo correspondiente y enviarnos un correo
                         %form{action:"https://formspree.io/jherson.o.s@hotmail.com",method:"POST",id:"contacto",class:"step-form"}
                             .row.center-xs
                                 .col-xs-2.col-md-1
@@ -95,19 +96,20 @@
                                 .col-xs-5
                                     .box
                                         %fieldset.step.active
-                                            %input{type:"email",name:"email",placeholder:"Coloca tu correo electronico",class:"input",required:"true"}
+                                            %input{type:"email",name:"email",placeholder:"Correo Electrónico",class:"input",required:"true"}
                                         %fieldset.step
-                                            %input{type:"text",name:"name",placeholder:"Coloca tu nombre",class:"input",required:"true"}
+                                            %input{type:"text",name:"name",placeholder:"Nombre",class:"input",required:"true"}
                                         %fieldset.step
-                                            %textarea{name:"body",placeholder:"Escribe aquí tu mensaje...",class:"input",required:"true"}
-                                        %div
-                                            %button{type:"submit",class:"btn btn-success"}
-                                                Enviar
+                                            %textarea{name:"body",placeholder:"Mensaje...",class:"input",required:"true"}
 
+        #location
+            #map
 
 
         %script{src:"https://code.jquery.com/jquery-3.1.0.min.js",integrity:"sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=",crossorigin:"anonymous"}
         :javascript
             window.jQuery || console.log("<script src='js/jquery-1.12.0.min.js'><\/script>")
+        %script{src:"http://maps.googleapis.com/maps/api/js?key=AIzaSyDTanm_xZQi4_RHeCAxerOqXN96NUwrbZU"}
+        %script{src:"js/maps-dist.js"}
         %script{src:"js/form_objects-min.js"}
         %script{src:"js/main-min.js"}

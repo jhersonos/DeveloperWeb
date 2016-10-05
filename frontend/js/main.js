@@ -45,19 +45,6 @@
 		$("#navigation").slideDown()
 		$("#sticky-navigation").slideUp("hidden")
 	}
-	function sendForm(){
-		$form = $(selector)
-		$.ajax({
-		    url: $form.attr("action"), 
-		    method: "POST",
-		    data: $form.formObject(),
-		    dataType: "json",
-		    success:function(){
-		    	alert("Todo salio bien")
-		    }
-		})
-	}
-
 	function isInBottom(){
 		const $description = $("#description")
 		const descriptionHeight=$description.height()
@@ -72,7 +59,7 @@
 	
 	const selector = "#contacto"
 	//$(".step:nth-child(1)").addClass("active")
-
+	//937810936 <- Patron
 	//function for swicht of input
 	$(selector).find(".input").on("change",(ev)=>{
 		const $input = $(ev.target)
@@ -87,6 +74,14 @@
 		}
 		//console.log($next_step)
 
+	})
+	//listener text area
+	$(".step textarea").on("keydown",(ev)=>{
+		if (ev.keyCode == 13){
+			ev.preventDefault()
+			$(ev.target).blur()
+			console.log("se ejecuto correctamente")
+		}
 	})
 		//Helpers
 	function validation_form(){
@@ -119,6 +114,21 @@
 *	Otro archivo js													 										 *
 *                          																					 *
 *************************************************************************************************************/
+//send form
+	function sendForm(){
+		const $form = $(selector)
+		$.ajax({
+		    url: $form.attr("action"), 
+		    method: "POST",
+		    data: $form.formObject(),
+		    dataType: "json",
+		    success:function(){
+		    	$form.slideUp()
+		    	$("#info-contact").html("Enviamos tu mensaje, pronto nos pondremos en contacto contigo")
+		    }
+		})
+	}
+
 //Function for points the form
 $('.path-step').on("click",(ev)=>{
 	const $current_circle = $(ev.target)
@@ -131,5 +141,6 @@ $('.path-step').on("click",(ev)=>{
 	//console.log($current_circle.index(".path-step"))
 	enfocar_nuevo_paso($test)
 })
+
 
 })()
