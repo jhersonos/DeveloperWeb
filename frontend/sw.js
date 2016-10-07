@@ -5,13 +5,13 @@ self.addEventListener("install",function(ev){
 	console.log("ServiceWorkers instalado")
 	caches.open(cache_name)
 		.then(function(cache){
-			console.log("cache opened")
+			//console.log("cache opened")
 			return cache.addAll(cache_urls)
 		})
 })
 
 self.addEventListener("fetch",function(ev){
-	console.log(ev.request)
+	//console.log(ev.request)
 	ev.respondWith(
 		caches.match(ev.request)
 			.then(function(response){

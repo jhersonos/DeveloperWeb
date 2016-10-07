@@ -63,7 +63,7 @@
 							<span class="dancing-script medium">Restaurante Facilito</span>
 						`
 					//show object and values response	
-					console.log(duration_element)
+					//console.log(duration_element)
 				}	
 			})
 		})
