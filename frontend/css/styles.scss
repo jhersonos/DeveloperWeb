@@ -151,6 +151,9 @@ textarea {
       transform: translate(-50%, -50%);
     }
 }   
+    #menu-opener{
+        display: none;
+    }
     .top-space{
         margin-top: 2em;
     }
@@ -389,7 +392,30 @@ textarea {
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
+@media only screen and (max-width: 960px){
+    #menu-opener{
 
+    }
+    #responsive-nav{
+        ul{
+            position:absolute;
+            width: 100%;
+            font-size: 1.5em;
+            top:95px;
+            background-color:#222;
+            left: 0px;
+            text-align: center;
+            max-height: 0px;
+            overflow: hidden;
+            transition: all 0.4s;
+            li{
+                display: block;
+                margin-top:1em;
+                padding:10px 15px; 
+            }
+        }
+    }
+}
 @media print,
        (min-resolution: 1.25dppx),
        (min-resolution: 120dpi) {
