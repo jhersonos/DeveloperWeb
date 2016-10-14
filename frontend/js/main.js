@@ -4,6 +4,13 @@ if (navigator.serviceWorker) {
 
 ;(function (){
 	
+	/***********************************/
+	$("#menu-opener").on("click",function(){
+		$("#responsive-nav ul").toggleClass("active")
+		$(this).toggleClass("glyphicon-menu-hamburger")
+	})
+
+	/***********************************/
 	let sticky	=	false
 	let currentPosition = 0
 	const imageCounter= parseInt($("[data-name='image-counter']").attr("content"))

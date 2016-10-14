@@ -422,17 +422,27 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 @media only screen and (max-width: 960px) {
+  #menu-opener {
+    display: block;
+    position: absolute;
+    top: 2vh;
+    right: 4vh;
+  }
   #responsive-nav ul {
     position: absolute;
     width: 100%;
     font-size: 1.5em;
-    top: 95px;
+    top: 10vh;
     background-color: #222;
     left: 0px;
+    margin: 0;
     text-align: center;
     max-height: 0px;
     overflow: hidden;
     transition: all 0.4s;
+  }
+  #responsive-nav ul.active {
+    max-height: 80vh;
   }
   #responsive-nav ul li {
     display: block;
