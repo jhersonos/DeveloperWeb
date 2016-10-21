@@ -36,11 +36,11 @@
                         %i.glyphicon.glyphicon-time
                         Abierto ahora
             %nav.fixed.navigation.medium.top.right.white-text#navigation
-                -menu = ["Inicio", "Menu"," Galería", "Contacto", "Como llegar"]
+                -menu = [{title:"Inicio",link:"#home"}, {title:"Menú",link:"#menu"},{title:"Galería",link:"#gallery"}, {title:"Contacto",link:"#contact"}, {title:"Como llegar",link:"#location"}]
                 %ul.list-inline
                     -menu.each do |item|
                         %li 
-                            %a{}= item
+                            %a{href:item[:link]}= item[:title]
             .absolute.white-text.large-padding.black.full-width#description
                 .row.middle-xs.center-xs
                     .col-xs-7.col-sm-6.white-text.medium
@@ -52,7 +52,7 @@
                                 %ul.list-inline
                                     -menu.each do |item|
                                         %li
-                                            %a{}= item
+                                            %a{href:item[:link]}= item[:title]
         .text-center.relative.height-85#menu
             .absolute.white#menu-title
                 %h2.dancing-script.title Menú
@@ -86,15 +86,14 @@
                         %p.text-center.medium#info-contact Presiona enter para llenar el campo correspondiente y enviarnos un correo
                         %form{action:"https://formspree.io/jherson.o.s@hotmail.com",method:"POST",id:"contacto",class:"step-form"}
                             .row.center-xs
-                                .col-xs-2.col-md-1
-                                    .box.text-center
+                                .col-xs-12.col-sm-3.col-md-1.first-sm
+                                    .box
                                         -3.times do |i|
                                             -if i == 0  
                                                 .path-step.active
                                             -else
                                                 .path-step
-                                            %br
-                                .col-xs-5
+                                .col-xs-12.col-sm-6.col-lg-3.first-xs
                                     .box
                                         %fieldset.step.active
                                             %input{type:"email",name:"email",placeholder:"Correo Electrónico",class:"input",required:"true"}

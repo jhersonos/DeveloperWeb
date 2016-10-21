@@ -308,7 +308,7 @@ textarea {
   margin-top: 2em;
   opacity: 0.4s;
   transition: all 0.4s;
-  display: inline-block;
+  display: block;
 }
 
 .path-step.active {
@@ -421,7 +421,17 @@ textarea {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media only screen and (max-height: 600px) {
+  #contact, .container .card {
+    margin-top: -15%;
+  }
+}
+
 @media only screen and (max-width: 960px) {
+  .path-step {
+    display: inline-block;
+    margin-right: 1em;
+  }
   #menu-opener {
     display: block;
     position: absolute;
@@ -432,7 +442,8 @@ textarea {
     position: absolute;
     width: 100%;
     font-size: 1.5em;
-    top: 10vh;
+    top: 68px;
+    /*10vh;*/
     background-color: #222;
     left: 0px;
     margin: 0;
@@ -448,6 +459,12 @@ textarea {
     display: block;
     margin-top: 1em;
     padding: 10px 15px;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  #responsive-nav ul {
+    top: 97px !important;
   }
 }
 

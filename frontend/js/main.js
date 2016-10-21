@@ -4,7 +4,7 @@ if (navigator.serviceWorker) {
 
 ;(function (){
 	
-	/***********************************/
+	/*********menu responsive***********/
 	$("#menu-opener").on("click",function(){
 		$("#responsive-nav ul").toggleClass("active")
 		$(this).toggleClass("glyphicon-menu-hamburger")
@@ -111,7 +111,7 @@ if (navigator.serviceWorker) {
 		$next_step.addClass("active")
 		$next_step.focus()
 		// coordinar circle con los pasos
-		const posicion = ($next_step.index(".step") * 2) + 1
+		const posicion = ($next_step.index(".step")) + 1
 		$(".path-step.active").removeClass("active")
 		const $circle = $(".path-step:nth-child("+posicion+")")
 		focus_circle($circle)
