@@ -5,17 +5,18 @@ if (navigator.serviceWorker) {
 ;(function (){
 	
 	/*********menu responsive***********/
-	$("#menu-opener").on("click",function(){
-		$("#responsive-nav ul").toggleClass("active")
-		$(this).toggleClass("glyphicon-menu-hamburger")
-	})
+	$("#menu-opener").on("click",toggleNav)
+	$("#menu-link").on("click",toggleNav)
 
 	/***********************************/
 	let sticky	=	false
 	let currentPosition = 0
 	const imageCounter= parseInt($("[data-name='image-counter']").attr("content"))
 	const correo = "jherson.o.s@hotmail.com"
-
+/*******inicialiti function onload*********/	
+	checkScroll()
+	isOpen()
+/******************************/	
 	$("#contacto").on("submit",function(ev){
 		ev.preventDefault()
 
@@ -35,6 +36,9 @@ if (navigator.serviceWorker) {
 	},4000)
 
 	$(window).scroll(()=>{
+		checkScroll()
+	})
+	function checkScroll(){
 		const inBottom = isInBottom()
 	
 		if (inBottom && !sticky) {
@@ -44,7 +48,20 @@ if (navigator.serviceWorker) {
 			sticky = false
 			unstickNavigation()
 		}
-	})
+	}
+	function isOpen(){
+		//reloj - 24 horas
+		let date = new Date()
+		const current_hour = date.getHours()
+		if (current_hour < 17 || current_hour > 23) {
+			$("#is-open .text").html("Cerrado ahora <br> abierto de 5pm a 11pm")
+		}
+	}
+
+	function toggleNav(){
+		$("#responsive-nav ul").toggleClass("active")
+		$("#menu-opener").toggleClass("glyphicon-menu-hamburger")
+	}
 	function stickNavigation(){
 		$("#description").addClass("fixed").removeClass("absolute")
 		$("#navigation").slideUp()

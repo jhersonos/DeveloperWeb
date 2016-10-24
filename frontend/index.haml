@@ -34,7 +34,7 @@
                     %h1.dancing-script.title.no-margin Restaurante Facilito
                     %p#is-open
                         %i.glyphicon.glyphicon-time
-                        Abierto ahora
+                        %span.text Abierto ahora
             %nav.fixed.navigation.medium.top.right.white-text#navigation
                 -menu = [{title:"Inicio",link:"#home"}, {title:"Menú",link:"#menu"},{title:"Galería",link:"#gallery"}, {title:"Contacto",link:"#contact"}, {title:"Como llegar",link:"#location"}]
                 %ul.list-inline
@@ -110,6 +110,4 @@
         :javascript
             window.jQuery || console.log("<script src='js/jquery-1.12.0.min.js'><\/script>")
         %script{src:"//maps.googleapis.com/maps/api/js?key=AIzaSyDTanm_xZQi4_RHeCAxerOqXN96NUwrbZU"}
-        %script{src:"js/maps-dist.js"}
-        %script{src:"js/form_objects-min.js"}
-        %script{src:"js/main-min.js"}
+        %script{src:"js/app.js"}
